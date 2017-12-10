@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <title>285</title>
+  <head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  </head>
+  <body>
+      hahahahaha
+
+      <form action="result" method="POST">{% csrf_token %}
+
+        <div class="pricing-levels-3">
+          <p><strong>Which level would you like? (Select 3 Levels)</strong></p>
+          <input class="single-checkbox" type="checkbox" name="strategy" value="Ethical Investing">Ethical Investing<br>
+          <input class="single-checkbox" type="checkbox" name="strategy" value="Growth Investing">Growth Investing<br>
+          <input class="single-checkbox" type="checkbox" name="strategy" value="Index Investing">Index Investing<br>
+          <input class="single-checkbox" type="checkbox" name="strategy" value="Quality Investing">Quality Investing<br>
+          <input class="single-checkbox" type="checkbox" name="strategy" value="Value Investing">Value Investing<br>
+        </div>
+
+
+        <input type="text" name="total" value="5000">
+
+
+        <input type="submit" name="submit">
+      </form>
+
+
+      <script type="text/javascript">
+        var limit = 2;
+        $('input.single-checkbox').on('change', function(evt) {
+           if($(this).siblings(':checked').length >= limit) {
+               this.checked = false;
+           }
+        });
+      </script>
+
+  </body>
+</html>
+
