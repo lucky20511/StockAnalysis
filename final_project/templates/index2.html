@@ -1,0 +1,115 @@
+<html>
+    <title>cmpe285 term project
+    </title>
+    <head>
+        <!-- bootstrap css meta info-->
+        <meta charset="UTF-8">
+    <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous"> 
+        <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    </head>
+    
+    <body>
+        <div class="boxformstyle">
+            <center>
+            <h1 style="color:white">Select your investment strategies</h1>
+            </center>
+        </div>
+        
+        <div class="container">           
+                <form method="POST" action="result" >{% csrf_token %}
+                    <div>
+                        <div class="verticalcenter" style="color:#179b77">
+                            <br>
+                            <center><h2><input type="checkbox" name="strategy" value="Ethical Investing"> Ethical Investing</h2></center>
+                            <center><h2><input type="checkbox" name="strategy" value="Growth Investing"> Growth Investing</h2></center>
+                            <center><h2><input type="checkbox" name="strategy" value="Index Investing"> Index Investing</h2></center>
+                            <center><h2><input type="checkbox" name="strategy" value="Quality Investing"> Quality Investing</h2></center>
+                            <center><h2><input type="checkbox" name="strategy" value="Value Investing"> Value Investing</h2></center><br>
+                            <center><h3 style="color:brown" >Allotment: <input type="number"  name="total" min="5000"></h3>
+                                <button type="submit" name="submit" class="button button-block">Invest your money!</button>
+                        </div>
+                    </div>
+                </form>
+                <script type="text/javascript">
+                    var limit = 2;
+                    $('input.single-checkbox').on('change', function(evt) {
+                    if($(this).siblings(':checked').length >= limit) {
+                        this.checked = false;
+                    }
+                    });
+                </script>         
+        </div>
+    </body>
+</html>
+<style>
+   p{
+        padding-left: 20px;
+        padding-bottom: 30px;
+        padding-top: 30px;
+        font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+        font-size: 28px;
+        background-color: transparent;
+    }
+   .bg {
+   position: fixed;
+   width: 40%;
+   background-color:transparent;
+   background: url(http://i.investopedia.com/content/short_article/top_preferred_stock_/stocks_istock535199427.jpg?quality=80&width=680&height=680) no-repeat #000;
+   background-size: cover;
+   z-index: -1;
+   }
+    .button {
+  border: 0;
+  outline: none;
+  border-radius: 0;
+  padding: 15px 0;
+  font-size: 20px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  background: #2ab75a;
+  color: #ffffff;
+  transition: all 0.5s ease;
+  -webkit-appearance: none;
+}
+.button:hover, .button:focus {
+  background: #9999FF;
+}
+
+.button-block {
+  display: block;
+  width: 100%;
+}
+.boxformstyle {
+    background: rgba(19, 35, 47, 0.9);
+    padding: 40px;
+    max-width: 100%;
+    margin: 40px auto;
+    border-radius: 4px;
+    box-shadow: 0 4px 10px 4px rgba(19, 35, 47, 0.3);
+    font-family: Frutiger, "Frutiger Linotype", Univers, Calibri, "Gill Sans", "Gill Sans MT", "Myriad Pro", Myriad, "DejaVu Sans Condensed", "Liberation Sans", "Nimbus Sans L", Tahoma, Geneva, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+}
+html { 
+    background: url('https://static.pexels.com/photos/139387/pexels-photo-139387.jpeg') no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+.verticalcenter{
+    background: rgba(238, 238, 238, 0.52);
+    margin-right:150px; 
+    position: relative;
+    margin-left: 150px;
+    margin-top: 240px;
+    -webkit-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-family: Corbel, "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", "DejaVu Sans", "Bitstream Vera Sans", "Liberation Sans", Verdana, "Verdana Ref", sans-serif;
+}
+</style>
