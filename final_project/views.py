@@ -31,45 +31,49 @@ print(data)
 # Create your views here.
 class HomePageView(View):
     def get(self, request, **kwargs):
-        return render(request, "index.html", context=None)
+        return render(request, "index2.html", context=None)
 
 
 class PrintPageView(View):
 
     def post(self, request, **kwargs):
-        print("================")
-        print("total:" + request.POST["total"])
-        print("strategy:" + request.POST["strategy"])
-        total_money = float(request.POST["total"])
-        strategy = request.POST["strategy"]
-        company_list = data[strategy]
-        # print(company_list)
-        '''
-        [ 
-            {'name': 'AAPL', 'portion': '30', 'result':['1503.81', '1502.39', '1496.81', '1499.56', '1500.00']}, 
-            {'name': 'ADBE', 'portion': '30', 'result':['1503.81', '1502.39', '1496.81', '1499.56', '1500.00']}, 
-            {'name': 'AQQQ', 'portion': '30', 'result':['1503.81', '1502.39', '1496.81', '1499.56', '1500.00']},
-            {'name': 'TOTAL', 'portion': '100', 'result':['1503.81', '1502.39', '1496.81', '1499.56', '1500.00']}
-        ]
-        
-        '''
-        # result_list = []
-        return_list = []
-        total_prices = [0.0,0.0,0.0,0.0,0.0]
+        try:
+            print("================")
+            print("total:" + request.POST["total"])
+            print("strategy:" + request.POST["strategy"])
+            total_money = float(request.POST["total"])
+            strategy = request.POST["strategy"]
+            company_list = data[strategy]
+            # print(company_list)
+            '''
+            [ 
+                {'name': 'AAPL', 'portion': '30', 'result':['1503.81', '1502.39', '1496.81', '1499.56', '1500.00']}, 
+                {'name': 'ADBE', 'portion': '30', 'result':['1503.81', '1502.39', '1496.81', '1499.56', '1500.00']}, 
+                {'name': 'AQQQ', 'portion': '30', 'result':['1503.81', '1502.39', '1496.81', '1499.56', '1500.00']},
+                {'name': 'TOTAL', 'portion': '100', 'result':['1503.81', '1502.39', '1496.81', '1499.56', '1500.00']}
+            ]
+            
+            '''
 
-        for c in company_list:
-            # result_list.append(Processor.processor.one_price(c["name"], total_money * float(c["portion"]) / 100 ))
-            result_item, result_price = Processor.processor.one_price(c["name"], total_money * float(c["portion"]) / 100 )
-            print(result_item)
-            return_list.append({'name': c["name"], 'portion': c['portion'], 'result' : result_item, 'last_price' : result_price})
-            total_prices = [total_prices[i] + float(result_item[i]) for i in range(len(total_prices))]
+            # result_list = []
+            return_list = []
+            total_prices = [0.0,0.0,0.0,0.0,0.0]
 
-          
-        return_list.append({'name': 'TOTAL', 'portion': '100', 'result' : total_prices})  
-        print(return_list)
-        print('***************')
+            for c in company_list:
+                # result_list.append(Processor.processor.one_price(c["name"], total_money * float(c["portion"]) / 100 ))
+                result_item, result_price = Processor.processor.one_price(c["name"], total_money * float(c["portion"]) / 100 )
+                print(result_item)
+                return_list.append({'name': c["name"], 'portion': c['portion'], 'result' : result_item, 'last_price' : result_price})
+                total_prices = [total_prices[i] + float(result_item[i]) for i in range(len(total_prices))]
 
-        context = return_list
 
+              
+            return_list.append({'name': 'TOTAL', 'portion': '100', 'result' : total_prices})  
+            print(return_list)
+            print('***************')
+
+            context = return_list
+        except Exception as e:
+            return render(request, "error.html")
         return render(request, "about.html", {"context":context})
 
