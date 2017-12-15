@@ -31,7 +31,7 @@ print(data)
 # Create your views here.
 class HomePageView(View):
     def get(self, request, **kwargs):
-        return render(request, "index.html", context=None)
+        return render(request, "index2.html", context=None)
 
 
 class PrintPageView(View):
