@@ -64,4 +64,4 @@ class processor():
         except KeyError:
             print("JSON KeyError")
 
-        return prices
+        return prices, cur_price
