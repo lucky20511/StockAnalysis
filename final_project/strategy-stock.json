@@ -5,38 +5,38 @@
     "Value Investing"
   ],
  "Ethical Investing": [
-  {"name":"AAPL","portion": "30"},
-  {"name":"ADBE","portion": "20"},
-  {"name":"NKE","portion": "20"},
-  {"name":"JCI","portion": "10"},
-  {"name":"GOOG","portion": "20"} 
+  {"name":"UAA","portion": "30"},
+  {"name":"DISCK","portion": "20"},
+  {"name":"FCX","portion": "20"},
+  {"name":"CSX","portion": "10"},
+  {"name":"MAT","portion": "20"} 
   ],
   "Growth Investing":[ 
-  {"name":"SNAP","portion": "20"},
-  {"name":"AVGO","portion": "20"},
-  {"name":"NFLX","portion": "20"},
-  {"name":"IMAX","portion": "20"},
-  {"name":"SFM","portion": "20"}
+  {"name":"CNC","portion": "20"},
+  {"name":"ORCL","portion": "20"},
+  {"name":"CHK","portion": "20"},
+  {"name":"BAC","portion": "20"},
+  {"name":"GE","portion": "20"}
   ],
   "Index Investing": [
-  {"name":"VTI","portion": "30"},
-  {"name":"IXUS","portion": "30"},
-  {"name":"ILTB","portion": "30"},
-  {"name":"SBUX","portion": "10"}
+  {"name":"MU","portion": "30"},
+  {"name":"MSFT","portion": "30"},
+  {"name":"F","portion": "30"},
+  {"name":"INTC","portion": "10"}
   ],
   "Quality Investing": [
-  {"name":"EME","portion": "30"},
-  {"name":"TSN","portion": "30"},
-  {"name":"ENS","portion": "30"},
-  {"name":"CVG","portion": "10"}
+  {"name":"CMCSA","portion": "30"},
+  {"name":"CSCO","portion": "30"},
+  {"name":"GILD","portion": "30"},
+  {"name":"LVS","portion": "10"}
   ],
   "Value Investing": [
-  {"name":"FDC","portion": "10"},
-  {"name":"TMUS","portion": "10"},
-  {"name":"HCA","portion": "30"},
-  {"name":"EXPE","portion": "10"},
-  {"name":"FDX","portion": "10"},
-  {"name":"CVS","portion": "30"}
+  {"name":"CELG","portion": "10"},
+  {"name":"AAPL","portion": "10"},
+  {"name":"TXN","portion": "30"},
+  {"name":"NXPI","portion": "10"},
+  {"name":"VZ","portion": "10"},
+  {"name":"MOS","portion": "30"}
   ]
   
 }
