@@ -59,9 +59,9 @@ class PrintPageView(View):
 
         for c in company_list:
             # result_list.append(Processor.processor.one_price(c["name"], total_money * float(c["portion"]) / 100 ))
-            result_item = Processor.processor.one_price(c["name"], total_money * float(c["portion"]) / 100 )
+            result_item, result_price = Processor.processor.one_price(c["name"], total_money * float(c["portion"]) / 100 )
             print(result_item)
-            return_list.append({'name': c["name"], 'portion': c['portion'], 'result' : result_item})
+            return_list.append({'name': c["name"], 'portion': c['portion'], 'result' : result_item, 'last_price' : result_price})
             total_prices = [total_prices[i] + float(result_item[i]) for i in range(len(total_prices))]
 
           
